@@ -3,107 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silvia Perea Navarro</title>
+  <title>Silvia Perea | Desarrolladora Backend</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  
   <style>
+    :root {
+      --primary: #0F172A;   /* Slate 900 */
+      --accent: #4F46E5;    /* Indigo 600 */
+      --accent-hover: #4338ca;
+      --text-main: #334155; /* Slate 700 */
+      --bg-light: #F8FAFC;  /* Slate 50 */
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      background-color: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
     }
 
+    /* Navbar */
     .navbar {
-      background-color: #6f42c1;
+      background-color: var(--primary) !important;
+      backdrop-filter: blur(10px);
     }
-
     .navbar-brand {
-      font-weight: bold;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .nav-link {
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #818cf8 !important;
     }
 
+    /* Header Parallax */
     header.parallax {
-      background-image: url('images/desarrollo-web-a-medida.png');
+      background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('images/desarrollo-web-a-medida.png');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       color: white;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      padding: 120px 0;
+      border-bottom: 4px solid var(--accent);
     }
 
-    header h1, header p {
-      margin-bottom: 0.5rem;
-    }
-
+    /* Títulos de Sección */
     section {
       padding: 80px 0;
     }
-
-    h2.section-title {
+    .section-title {
       text-align: center;
-      margin-bottom: 40px;
-      color: #6f42c1;
-      border-bottom: 2px solid #6f42c1;
-      display: inline-block;
-      padding-bottom: 5px;
+      margin-bottom: 50px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
+    /* Imágenes redondas */
     .profile-img, .dubi-img {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 4px solid white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .profile-img:hover, .dubi-img:hover {
+      transform: scale(1.05);
     }
 
+    /* Texto y resaltes */
+    p {
+      text-align: justify;
+      line-height: 1.7;
+    }
     .highlight {
-      color: #e83e8c;
-      font-weight: bold;
+      color: var(--accent);
+      font-weight: 600;
     }
 
-    .card {
+    /* Tarjetas de Proyectos */
+    .card-project {
       border: none;
-      border-left: 4px solid #6f42c1;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border-top: 4px solid var(--accent);
+    }
+    .card-project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
     }
 
-    .list-group-item {
-      background-color: #ffffff;
-      border: none;
-      border-left: 4px solid #e83e8c;
-      margin-bottom: 10px;
+    /* Etiquetas de Tecnologías (Badges) */
+    .tech-badge {
+      background-color: rgba(79, 70, 229, 0.1);
+      color: var(--accent);
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin: 5px;
+      display: inline-block;
+      border: 1px solid rgba(79, 70, 229, 0.2);
     }
 
+    /* Footer */
     footer {
-      background-color: #6f42c1;
+      background-color: var(--primary);
       color: white;
-      padding: 40px 0;
+      padding: 50px 0 30px;
     }
-
     footer a {
       color: white;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-
     footer a:hover {
-      text-decoration: underline;
+      color: var(--accent);
     }
-
-    p {
-      text-align: justify;
-    }
-
-    ul {
-      padding-left: 1.5rem;
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#">Silvia Perea</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -112,122 +163,144 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#formacion">Formación</a></li>
           <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
           <li class="nav-item"><a class="nav-link" href="#habilidades">Tecnologías</a></li>
-          <li class="nav-item"><a class="nav-link" href="#mas">Más sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#mas">Personal</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="parallax text-center py-5">
-    <div class="container py-5">
-      <h1 class="display-4 fw-bold">Silvia Perea Navarro</h1>
-      <p class="lead">Desarrolladora de Aplicaciones Web</p>
+  <header class="parallax text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Silvia Perea Navarro</h1>
+      <p class="lead fs-3">Desarrolladora Backend & Base de Datos</p>
+      <p class="mt-4"><a href="#proyectos" class="btn btn-outline-light btn-lg px-4 rounded-pill">Ver mis proyectos</a></p>
     </div>
   </header>
 
-  <!-- Sobre mí -->
   <section id="sobremi">
     <div class="container">
       <h2 class="section-title">Sobre mí</h2>
-      <div class="row align-items-center">
+      <div class="row align-items-center g-5">
         <div class="col-md-4 text-center">
-          <img src="images/silvia.jpeg" alt="Foto de Silvia" class="profile-img mb-4" />
+          <img src="images/silvia.jpeg" alt="Foto de Silvia Perea" class="profile-img" />
         </div>
         <div class="col-md-8">
-          <p>Me llamo Silvia, soy desarrolladora de aplicaciones web con formación en biología. Me gusta aprender, resolver problemas lógicos y pensar de forma estructurada. Gracias a mi experiencia científica, tengo una mente analítica y organizada.</p>
-          <p>Me siento especialmente cómoda trabajando en el <span class="highlight">backend</span>, donde puedo centrarme en la lógica, la arquitectura y la eficiencia del código. Me encanta que todo funcione como un mecanismo preciso y bien pensado.</p>
-          <p>En mi tiempo libre, disfruto montando <span class="highlight">puzzles</span> y construyendo con <span class="highlight">LEGO</span>. Son formas de concentración que me relajan mientras mantengo activa la mente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Formación -->
-  <section id="formacion" class="bg-white">
-    <div class="container">
-      <h2 class="section-title">Formación</h2>
-      <ul class="list-group">
-        <li class="list-group-item"><strong>FP Superior en Desarrollo de Aplicaciones Web</strong> – En curso</li>
-        <li class="list-group-item"><strong>Grado en Biología</strong> – Universidad de Valencia</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Proyectos -->
-  <section id="proyectos">
-    <div class="container">
-      <h2 class="section-title">Proyectos destacados</h2>
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title text-primary">Aplicación web para cadena de gimnasios</h5>
-          <p class="card-text">Plataforma para gestionar clientes, clases, entrenadores y sucursales. Incluye autenticación, gestión de horarios y administración de usuarios.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title text-primary">Diseño y modelado con UML</h5>
-          <p class="card-text">Uso de Modelio para representar clases, relaciones y procesos. Aplicación de principios de diseño estructurado en proyectos reales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Habilidades -->
-  <section id="habilidades" class="bg-white">
-    <div class="container">
-      <h2 class="section-title">Tecnologías y herramientas</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <ul>
-            <li>Java</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>MySQL</li>
-            <li>Python (básico)</li>
-            <li>R (básico)</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <ul>
-            <li>Modelio</li>
-            <li>Miro (wireframes)</li>
-            <li>Git y GitHub</li>
-            <li>Bootstrap</li>
-            <li>LaTeX</li>
+          <p>Me llamo Silvia, soy desarrolladora de aplicaciones web con formación previa en <strong>Biología</strong>. Esta trayectoria científica me ha dotado de una mentalidad analítica, orientada al rigor y a la resolución estructurada de problemas complejos.</p>
+          <p>Me siento especialmente cómoda trabajando en el <span class="highlight">backend y bases de datos</span>, donde puedo centrarme en la lógica de negocio, el diseño de APIs REST y la eficiencia de las consultas. Me encanta construir la arquitectura invisible que hace que todo funcione como un mecanismo preciso y escalable.</p>
+          
+          <h5 class="mt-4 mb-3 fw-bold" style="color: var(--primary);">🎓 Formación Académica</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-mortarboard-fill text-accent me-2" style="color: var(--accent);"></i> <strong>CFGS Desarrollo de Aplicaciones Web (DAW)</strong> – IES Font de Sant Lluís (2024-2026)</li>
+            <li><i class="bi bi-mortarboard-fill text-accent me-2" style="color: var(--accent);"></i> <strong>Grado en Biología</strong> – Universitat de València (2016-2020)</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Más sobre mí -->
-  <section id="mas">
+  <section id="proyectos" class="bg-white">
     <div class="container">
-      <h2 class="section-title">Más sobre mí</h2>
-      <ul>
-        <li>Idiomas: Inglés (B2), Valenciano (C1)</li>
-        <li>Gran capacidad de análisis y resolución estructurada de problemas</li>
-        <li>Proactiva y con facilidad para el trabajo en equipo</li>
-        <li>Conocimientos de LaTeX para redacción técnica y académica</li>
-        <li>Me relaja hacer puzzles y construir con LEGO</li>
-      </ul>
-      <div class="text-center mt-4">
-        <img src="images/dubi.jpeg" alt="Foto de Dubi" class="dubi-img mb-3" />
-        <p><span class="highlight">Dubi</span>, mi compañero de cuatro patas. Es un galgo simpático, muy sociable para lo que suelen ser los de su raza, y siempre me acompaña en mis momentos de concentración.</p>
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-6">
+          <div class="card-project p-4">
+            <h4 class="fw-bold" style="color: var(--primary);">Plataforma Rendimiento Deportivo</h4>
+            <h6 class="text-muted mb-3">Valencia Basket (Prácticas - 2026)</h6>
+            <p>Desarrollo integral y autónomo de una plataforma interna para el Departamento de Rendimiento Deportivo. Gestión y optimización de métricas médicas y físicas de los jugadores de élite.</p>
+            <div class="mt-auto">
+              <span class="badge bg-dark">Python</span>
+              <span class="badge bg-dark">FastAPI</span>
+              <span class="badge bg-dark">Django</span>
+              <span class="badge bg-dark">REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-project p-4">
+            <h4 class="fw-bold" style="color: var(--primary);">Sistema de Gestión Portuaria</h4>
+            <h6 class="text-muted mb-3">Proyecto Final de Ciclo DAW</h6>
+            <p>Desarrollo Full-Stack de una aplicación web para la monitorización en tiempo real y el control de tránsito de contenedores en instalaciones portuarias logísticas.</p>
+            <div class="mt-auto">
+              <span class="badge bg-dark">PHP</span>
+              <span class="badge bg-dark">Laravel</span>
+              <span class="badge bg-dark">React</span>
+              <span class="badge bg-dark">MySQL</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contacto -->
+  <section id="habilidades">
+    <div class="container text-center">
+      <h2 class="section-title">Stack Tecnológico</h2>
+      <div class="mx-auto" style="max-width: 800px;">
+        <p class="mb-4 text-muted">Tecnologías y herramientas con las que trabajo en mi día a día para construir software robusto.</p>
+        
+        <div class="mb-4">
+          <span class="tech-badge"><i class="bi bi-filetype-py"></i> Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">Django</span>
+          <span class="tech-badge"><i class="bi bi-filetype-php"></i> PHP</span>
+          <span class="tech-badge"><i class="bi bi-braces"></i> Laravel</span>
+          <span class="tech-badge"><i class="bi bi-cup-hot"></i> Java</span>
+        </div>
+        
+        <div class="mb-4">
+          <span class="tech-badge"><i class="bi bi-database"></i> MySQL</span>
+          <span class="tech-badge"><i class="bi bi-database-fill"></i> PostgreSQL</span>
+          <span class="tech-badge"><i class="bi bi-terminal"></i> Linux</span>
+          <span class="tech-badge"><i class="bi bi-git"></i> Git / GitHub</span>
+        </div>
+
+        <div>
+          <span class="tech-badge"><i class="bi bi-filetype-jsx"></i> React</span>
+          <span class="tech-badge"><i class="bi bi-filetype-js"></i> JavaScript</span>
+          <span class="tech-badge"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mas" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Un poco más sobre mí</h2>
+      <div class="row align-items-center g-5">
+        <div class="col-md-7">
+          <ul class="list-group list-group-flush fs-5">
+            <li class="list-group-item border-0 pb-3"><i class="bi bi-check-circle-fill text-accent me-2" style="color: var(--accent);"></i> <strong>Idiomas:</strong> Valenciano bilingüe (C1) e Inglés técnico (B2).</li>
+            <li class="list-group-item border-0 pb-3"><i class="bi bi-check-circle-fill text-accent me-2" style="color: var(--accent);"></i> <strong>Transversales:</strong> Proactiva, con alta adaptabilidad gracias a mi experiencia previa en atención al cliente y gestión.</li>
+            <li class="list-group-item border-0 pb-3"><i class="bi bi-check-circle-fill text-accent me-2" style="color: var(--accent);"></i> <strong>Hobbies:</strong> En mi tiempo libre me relaja hacer <span class="highlight">puzzles</span> y construir sets de <span class="highlight">LEGO</span>, manteniendo la mente activa pero desconectada de las pantallas.</li>
+          </ul>
+        </div>
+        <div class="col-md-5 text-center">
+          <img src="images/dubi.jpeg" alt="Dubi el Galgo" class="dubi-img mb-3 shadow" />
+          <p class="fst-italic text-muted px-4">Él es <span class="highlight">Dubi</span>, mi compañero de cuatro patas. Un galgo simpático y muy sociable que me hace compañía en mis sesiones de código.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer id="contacto" class="text-center">
     <div class="container">
-      <p class="mb-2">© 2025 Silvia Perea Navarro</p>
-      <p class="mb-2"><a href="mailto:silvia.pn.empleo@gmail.com"><i class="bi bi-envelope"></i> silvia.pn.empleo@gmail.com</a></p>
-      <a href="https://www.linkedin.com/in/tu-usuario-linkedin" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+      <h3 class="fw-bold mb-4">¿Hablamos?</h3>
+      <p class="mb-4">Actualmente buscando mi primera oportunidad profesional como Desarrolladora Junior.</p>
+      
+      <div class="social-icons mb-5">
+        <a href="mailto:silvia.pn.empleo@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://github.com/silchartur" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/tu-usuario-linkedin" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+      <hr style="opacity: 0.2;">
+      <p class="mt-4 mb-0" style="font-size: 0.9rem;">&copy; 2026 Silvia Perea Navarro. Creado con lógica y café.</p>
     </div>
   </footer>
 
